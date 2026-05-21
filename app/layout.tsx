@@ -4,9 +4,61 @@ import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "DVD Screensaver – Free Bouncing Logo Simulator Online",
+  metadataBase: new URL("https://dvdscreensaver.app"),
+  title: {
+    default: "DVD Screensaver – Free Bouncing DVD Logo Online | No Download",
+    template: "%s | DVD Screensaver",
+  },
   description:
     "Free DVD screensaver online. Watch the bouncing DVD logo hit the corner, change colour, and bounce off every edge. Classic DVD logo screensaver simulator — no download needed.",
+  keywords: [
+    "dvd screensaver",
+    "bouncing dvd logo",
+    "dvd screensaver simulator",
+    "dvd logo screensaver",
+    "dvd screensaver online",
+    "dvd screensaver hits corner",
+    "dvd video screensaver",
+    "free screensaver",
+    "tv screensaver",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "DVD Screensaver – Free Bouncing DVD Logo Online",
+    description:
+      "Watch the classic bouncing DVD logo screensaver in your browser. Free, no download. Change colour, adjust speed, hit the corner.",
+    url: "https://dvdscreensaver.app",
+    siteName: "DVD Screensaver",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "DVD Screensaver – Bouncing DVD Logo Simulator",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DVD Screensaver – Free Bouncing DVD Logo Online",
+    description:
+      "Watch the classic bouncing DVD logo screensaver in your browser. Free, no download. Change colour, adjust speed, hit the corner.",
+  },
+  applicationName: "DVD Screensaver",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

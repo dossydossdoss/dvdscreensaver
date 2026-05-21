@@ -278,11 +278,11 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
   return (
     <div className={`flex min-h-screen flex-col ${pageBg}`}>
       <header
-        className={`border-b px-4 py-3 text-sm ${
+        className={`border-b py-3 text-sm ${
           isLight ? "border-slate-200 bg-white/80 shadow-sm" : "border-neutral-800"
         }`}
       >
-        <div className="mx-auto flex w-full lg:max-w-6xl flex-col gap-3">
+        <div className="mx-auto flex w-full lg:max-w-6xl flex-col gap-3 px-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h1 className="text-base font-semibold">{copy.h1}</h1>
             <ThemeToggle />

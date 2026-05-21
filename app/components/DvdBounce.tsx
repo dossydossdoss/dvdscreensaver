@@ -102,17 +102,34 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
   // Rotating bounce color
   const [bounceColor, setBounceColor] = useState<string>(logoColors[0]);
 
-  // Color mode: "rotate" = change on bounce, "solid" = fixed color
-  const [colorMode, setColorMode] = useState<"rotate" | "solid">("rotate");
+  // Color mode: "rotate" = change on bounce, "solid" = fixed, "cycle" = continuous hue shift
+  const [colorMode, setColorMode] = useState<"rotate" | "solid" | "cycle">("rotate");
   const [solidColor, setSolidColor] = useState<string>(logoColors[0]);
-  const colorModeRef = useRef<"rotate" | "solid">("rotate");
+  const colorModeRef = useRef<"rotate" | "solid" | "cycle">("rotate");
+  const [previewHue, setPreviewHue] = useState(0);
 
   useEffect(() => {
     colorModeRef.current = colorMode;
   }, [colorMode]);
 
+  // Always-running hue loop — drives both the thumbnail and logo when in cycle mode
+  useEffect(() => {
+    let hue = 0;
+    let frame = 0;
+    const tick = () => {
+      hue = (hue + 0.4) % 360;
+      setPreviewHue(hue);
+      frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   // The actual displayed color
-  const activeColor = colorMode === "solid" ? solidColor : bounceColor;
+  const activeColor =
+    colorMode === "solid" ? solidColor
+    : colorMode === "cycle" ? `hsl(${previewHue}, 100%, 55%)`
+    : bounceColor;
 
   const [sizePercent, setSizePercent] = useState<number>(100);
   const [speedUnits, setSpeedUnits] = useState<number>(1);
@@ -335,13 +352,13 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
           </div>
         </div>
 
-        {/* Controls — 4 columns on large screens */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Controls — 3 columns: logo | color | size+speed */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 
           {/* Logo picker */}
-          <div className={`${cardBase} p-4`}>
+          <div className={`${cardBase} p-4 flex flex-col`}>
             <div className="mb-3 text-sm font-medium">{copy.labels.logo}</div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-1">
               {LOGOS.map((logo) => {
                 const active = logo.id === logoId;
                 return (
@@ -349,7 +366,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
                     key={logo.id}
                     onClick={() => setLogoId(logo.id)}
                     title={logo.label}
-                    className={`flex flex-1 items-center justify-center rounded-lg border p-2 transition min-w-0 ${
+                    className={`flex flex-1 items-center justify-center rounded-lg border p-3 transition min-w-0 ${
                       active
                         ? isLight
                           ? "border-sky-400 bg-sky-50 shadow-sm"
@@ -360,7 +377,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
                     }`}
                   >
                     <div
-                      className="h-8 w-full"
+                      className="w-full h-12"
                       style={{
                         backgroundColor: activeColor,
                         maskImage: `url('${maskSrcs[logo.id]}')`,
@@ -380,110 +397,125 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
           </div>
 
           {/* Color picker */}
-          <div className={`${cardBase} p-4`}>
+          <div className={`${cardBase} p-4 flex flex-col`}>
             <div className="mb-3 text-sm font-medium">{copy.labels.color}</div>
-            <div className="flex flex-wrap gap-2 items-center">
-              {/* Rotating (default) */}
-              <button
-                onClick={() => setColorMode("rotate")}
-                title="Rotating (changes on bounce)"
-                className={`h-7 w-7 rounded-full transition ${
-                  colorMode === "rotate"
-                    ? "ring-2 ring-white ring-offset-2 ring-offset-neutral-900 scale-110"
-                    : "opacity-70 hover:opacity-100"
-                }`}
-                style={{
-                  background:
-                    "conic-gradient(#ef4444, #f97316, #facc15, #22c55e, #22d3ee, #3b82f6, #a855f7, #ec4899, #ef4444)",
-                }}
-              />
+            <div className="flex flex-1 items-center justify-center">
+              <div className="flex flex-wrap gap-3 justify-center">
+                {/* Rotating (changes on bounce) */}
+                <button
+                  onClick={() => setColorMode("rotate")}
+                  title="Rotating (changes on bounce)"
+                  className={`h-9 w-9 rounded-full transition overflow-hidden ${
+                    colorMode === "rotate"
+                      ? "ring-2 ring-white ring-offset-2 ring-offset-neutral-900 scale-110"
+                      : "opacity-70 hover:opacity-100"
+                  }`}
+                  style={{
+                    background:
+                      "conic-gradient(#ef4444, #f97316, #facc15, #22c55e, #22d3ee, #3b82f6, #a855f7, #ec4899, #ef4444)",
+                  }}
+                />
 
-              {/* Preset swatches */}
-              {PRESET_COLORS.map((c) => {
-                const active = colorMode === "solid" && solidColor === c;
-                return (
-                  <button
-                    key={c}
-                    onClick={() => { setColorMode("solid"); setSolidColor(c); }}
-                    title={c}
-                    className={`h-7 w-7 rounded-full transition ${
-                      active
-                        ? "ring-2 ring-white ring-offset-2 ring-offset-neutral-900 scale-110"
-                        : "opacity-70 hover:opacity-100 hover:scale-105"
-                    } ${c === "#ffffff" ? "shadow-[0_0_0_1px_rgba(255,255,255,0.3)]" : ""}`}
-                    style={{ backgroundColor: c }}
-                  />
-                );
-              })}
+                {/* Preset swatches */}
+                {PRESET_COLORS.map((c) => {
+                  const active = colorMode === "solid" && solidColor === c;
+                  return (
+                    <button
+                      key={c}
+                      onClick={() => { setColorMode("solid"); setSolidColor(c); }}
+                      title={c}
+                      className={`h-9 w-9 rounded-full transition ${
+                        active
+                          ? "ring-2 ring-white ring-offset-2 ring-offset-neutral-900 scale-110"
+                          : "opacity-70 hover:opacity-100 hover:scale-105"
+                      } ${c === "#ffffff" ? "shadow-[0_0_0_1px_rgba(255,255,255,0.3)]" : ""}`}
+                      style={{ backgroundColor: c }}
+                    />
+                  );
+                })}
 
-              {/* Custom color picker */}
-              <button
-                title="Custom color"
-                onClick={() => colorInputRef.current?.click()}
-                className={`h-7 w-7 rounded-full transition ${
-                  customActive
-                    ? "ring-2 ring-white ring-offset-2 ring-offset-neutral-900 scale-110"
-                    : "opacity-70 hover:opacity-100 hover:scale-105"
-                }`}
-                style={{
-                  background: customActive
-                    ? solidColor
-                    : "linear-gradient(135deg, #ef4444, #f97316, #facc15, #22c55e, #22d3ee, #3b82f6, #a855f7, #ec4899)",
-                }}
-              />
+                {/* Custom color picker */}
+                <button
+                  title="Custom color"
+                  onClick={() => colorInputRef.current?.click()}
+                  className={`h-9 w-9 rounded-full transition ${
+                    customActive
+                      ? "ring-2 ring-white ring-offset-2 ring-offset-neutral-900 scale-110"
+                      : "opacity-70 hover:opacity-100 hover:scale-105"
+                  }`}
+                  style={{
+                    background: customActive
+                      ? solidColor
+                      : "linear-gradient(135deg, #ef4444, #f97316, #facc15, #22c55e, #22d3ee, #3b82f6, #a855f7, #ec4899)",
+                  }}
+                />
+                <input
+                  ref={colorInputRef}
+                  type="color"
+                  value={customActive ? solidColor : "#888888"}
+                  onChange={(e) => { setColorMode("solid"); setSolidColor(e.target.value); }}
+                  style={{ position: "absolute", width: 0, height: 0, padding: 0, border: 0, opacity: 0 }}
+                />
+
+                {/* Cycle (continuous hue shift) */}
+                <button
+                  onClick={() => setColorMode("cycle")}
+                  title="Cycle (continuous colour spectrum)"
+                  className={`h-9 w-9 rounded-full transition ${
+                    colorMode === "cycle"
+                      ? "ring-2 ring-white ring-offset-2 ring-offset-neutral-900 scale-110"
+                      : "opacity-70 hover:opacity-100"
+                  }`}
+                  style={{ backgroundColor: `hsl(${previewHue}, 100%, 55%)` }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Logo size + Speed stacked */}
+          <div className="flex flex-col gap-4">
+            <div className={`${cardBase} p-4`}>
+              <div className="mb-3 flex items-center justify-between text-sm">
+                <span className="font-medium">{copy.labels.logoSize}</span>
+                <span className={`text-xs ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
+                  {sizePercent}%
+                </span>
+              </div>
               <input
-                ref={colorInputRef}
-                type="color"
-                value={customActive ? solidColor : "#888888"}
-                onChange={(e) => { setColorMode("solid"); setSolidColor(e.target.value); }}
-                style={{ position: "absolute", width: 0, height: 0, padding: 0, border: 0, opacity: 0 }}
+                type="range"
+                min={60}
+                max={300}
+                value={sizePercent}
+                onChange={(e) => setSizePercent(Number(e.target.value))}
+                className="w-full slider-pill"
+                style={{
+                  ["--slider-accent" as string]: activeColor,
+                  ["--slider-pos" as string]: `${sizeSliderPos}%`,
+                } as React.CSSProperties}
               />
             </div>
-          </div>
 
-          {/* Logo size */}
-          <div className={`${cardBase} p-4`}>
-            <div className="mb-3 flex items-center justify-between text-sm">
-              <span className="font-medium">{copy.labels.logoSize}</span>
-              <span className={`text-xs ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
-                {sizePercent}%
-              </span>
+            <div className={`${cardBase} p-4`}>
+              <div className="mb-3 flex items-center justify-between text-sm">
+                <span className="font-medium">{copy.labels.speed}</span>
+                <span className={`text-xs ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
+                  {speed.toFixed(1)}x
+                </span>
+              </div>
+              <input
+                type="range"
+                min={SPEED_MIN}
+                max={SPEED_MAX}
+                step={SPEED_STEP}
+                value={speedUnits}
+                onChange={(e) => setSpeedUnits(Number(e.target.value))}
+                className="w-full slider-pill"
+                style={{
+                  ["--slider-accent" as string]: activeColor,
+                  ["--slider-pos" as string]: `${speedSliderPos}%`,
+                } as React.CSSProperties}
+              />
             </div>
-            <input
-              type="range"
-              min={60}
-              max={300}
-              value={sizePercent}
-              onChange={(e) => setSizePercent(Number(e.target.value))}
-              className="w-full slider-pill"
-              style={{
-                ["--slider-accent" as string]: activeColor,
-                ["--slider-pos" as string]: `${sizeSliderPos}%`,
-              } as React.CSSProperties}
-            />
-          </div>
-
-          {/* Speed */}
-          <div className={`${cardBase} p-4`}>
-            <div className="mb-3 flex items-center justify-between text-sm">
-              <span className="font-medium">{copy.labels.speed}</span>
-              <span className={`text-xs ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
-                {speed.toFixed(1)}x
-              </span>
-            </div>
-            <input
-              type="range"
-              min={SPEED_MIN}
-              max={SPEED_MAX}
-              step={SPEED_STEP}
-              value={speedUnits}
-              onChange={(e) => setSpeedUnits(Number(e.target.value))}
-              className="w-full slider-pill"
-              style={{
-                ["--slider-accent" as string]: activeColor,
-                ["--slider-pos" as string]: `${speedSliderPos}%`,
-              } as React.CSSProperties}
-            />
           </div>
         </div>
       </main>

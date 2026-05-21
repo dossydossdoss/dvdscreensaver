@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 
@@ -15,6 +16,12 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <ThemeProvider>{children}</ThemeProvider>
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="9e5ee5ac-d7e5-4609-b66b-3826180a55e5"
+          strategy="afterInteractive"
+          defer
+        />
       </body>
     </html>
   );

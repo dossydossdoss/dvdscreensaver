@@ -282,7 +282,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
           isLight ? "border-slate-200 bg-white/80 shadow-sm" : "border-neutral-800"
         }`}
       >
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-1 sm:px-3">
+        <div className="mx-auto flex w-full lg:max-w-6xl flex-col gap-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h1 className="text-base font-semibold">{copy.h1}</h1>
             <ThemeToggle />

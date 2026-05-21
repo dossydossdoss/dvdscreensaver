@@ -33,7 +33,7 @@ const copy: DvdCopy = {
       ],
     },
     {
-      title: "Use Cases",
+      title: "DVD Screensaver Use Cases",
       bullets: [
         "Burn-In Prevention: constant motion helps prevent static-image burn-in on OLED/AMOLED screens.",
         "Motion & Display Testing: check panel uniformity, motion blur, refresh rate issues, and pixel response.",
@@ -43,7 +43,17 @@ const copy: DvdCopy = {
       ],
     },
     {
-      title: "How to Use",
+      title: "Will the DVD Logo Hit the Corner?",
+      bullets: [
+        "Yes — given enough time and the right starting trajectory, the bouncing DVD logo will hit the exact corner of the screen.",
+        "This is the most iconic moment of the DVD screensaver, made famous by the TV show The Office.",
+        "The corner hit happens because the logo bounces at fixed angles. When the ratio of width to height matches the trajectory, a corner hit is inevitable.",
+        "Use the speed slider to make it happen faster. Slower speeds are more satisfying to watch.",
+        "Each session starts with a slightly different position and angle — so every run is unique.",
+      ],
+    },
+    {
+      title: "How to Use the DVD Screensaver",
       ordered: [
         "Choose your logo style from the 3 options.",
         "Choose your speed (slow / medium / fast).",

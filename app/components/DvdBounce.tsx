@@ -28,9 +28,9 @@ const PRESET_COLORS = [
 ];
 
 const LOGOS = [
-  { id: "classic", src: "/dvd-logo.png",   label: "Classic", invertLuminance: false },
-  { id: "alt",     src: "/dvd-2-logo.png", label: "Alt",     invertLuminance: true  },
-  { id: "alt2",    src: "/dvd-3-logo.png", label: "Alt 2",   invertLuminance: true  },
+  { id: "classic", src: "/dvd-logo.png",   label: "Classic DVD Logo",       invertLuminance: false },
+  { id: "alt",     src: "/dvd-2-logo.png", label: "DVD Video Logo",         invertLuminance: true  },
+  { id: "alt2",    src: "/dvd-3-logo.png", label: "DVD Video Logo (Alt)",   invertLuminance: true  },
 ];
 
 function useProcessedMasks() {
@@ -366,6 +366,8 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
                     key={logo.id}
                     onClick={() => setLogoId(logo.id)}
                     title={logo.label}
+                    aria-label={`Select ${logo.label} style`}
+                    aria-pressed={active}
                     className={`flex flex-1 items-center justify-center rounded-lg border p-3 transition min-w-0 ${
                       active
                         ? isLight
@@ -522,8 +524,10 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
         {/* Info cards — same container as canvas/controls */}
         <div className="flex flex-col gap-4 text-sm pb-4">
 
-          {copy.infoCards.map((card) => (
-            <div key={card.title} className={`${cardBase} p-4`}>
+          {copy.infoCards.map((card) => {
+            const id = card.title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+            return (
+            <div key={card.title} id={id} className={`${cardBase} p-4`}>
               <h2 className={`text-lg font-semibold ${headingColor}`}>{card.title}</h2>
               <div className="mt-2 space-y-2">
                 {"bullets" in card &&
@@ -549,7 +553,8 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
                 )}
               </div>
             </div>
-          ))}
+            );
+          })}
 
         </div>
       </main>

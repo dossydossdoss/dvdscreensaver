@@ -4,9 +4,9 @@ import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "DVD Screensaver – Classic Bouncing DVD Logo",
+  title: "Bouncing DVD Logo Screensaver – Free Online Simulator",
   description:
-    "The classic DVD screensaver with the bouncing DVD logo. Adjust speed, size, and fullscreen mode.",
+    "Free bouncing DVD logo screensaver simulator. Watch the DVD logo bounce around your screen, hit the corner, and change colour. Adjust speed and size. Works in any browser.",
 };
 
 export default function RootLayout({

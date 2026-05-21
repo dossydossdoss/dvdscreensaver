@@ -9,9 +9,9 @@ const DvdBounce = dynamic(
 );
 
 const copy: DvdCopy = {
-  h1: "DVD Screensaver – Classic Bouncing DVD Logo",
+  h1: "Bouncing DVD Logo Screensaver Simulator",
   subtitle:
-    "A fullscreen version of the iconic DVD screensaver, complete with adjustable speed and logo size. Smooth motion, edge-bounce behaviour, and full nostalgic charm. Directly in your browser.",
+    "Free online bouncing DVD logo screensaver simulator. Watch the DVD video screensaver bounce off edges, change colour on every hit, and chase the classic corner moment. Adjust speed and size. Runs directly in your browser.",
   labels: { logoSize: "Logo size", speed: "Speed", logo: "Logo style", color: "Color" },
   shortcutHint: {
     enterKeys: "F / Space",
@@ -23,13 +23,14 @@ const copy: DvdCopy = {
     {
       title: "What the DVD Screensaver Does",
       bullets: [
-        "Displays the classic bouncing DVD logo screensaver",
+        "Classic bouncing logo screensaver — the DVD logo bounces off every edge",
+        "Free online DVD screensaver simulator, no download or account required",
         "Choose from 3 different DVD logo styles using the logo picker",
         "Lets you change movement speed (slow → fast)",
         "Lets you change the logo size (small → large)",
-        "Bounces off screen edges with smooth directional changes",
+        "Watch the bouncing screensaver hit the corner for that iconic moment",
         "Works on any desktop, laptop, TV, or projector",
-        "Perfect for ambience, fun, and display testing",
+        "Perfect for ambience, burn-in prevention, and display testing",
       ],
     },
     {
@@ -61,8 +62,8 @@ const copy: DvdCopy = {
           a: "The DVD screensaver displays the classic bouncing DVD logo, the same animation found on DVD players and early Windows Media Player. The logo moves around the screen and changes color each time it bounces off an edge.",
         },
         {
-          q: "Can the DVD logo hit the corner?",
-          a: "Yes. Given enough time (and the right trajectory), the logo will land exactly in a corner. A famously satisfying moment. Adjust the speed slider to make it happen faster or slower.",
+          q: "Can the DVD screensaver hit the corner?",
+          a: "Yes. Given enough time (and the right trajectory), the bouncing DVD logo screensaver will hit the corner exactly. A famously satisfying moment. Adjust the speed slider to make it happen faster or slower.",
         },
         {
           q: "Does the DVD screensaver prevent screen burn-in?",

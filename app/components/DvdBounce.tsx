@@ -334,7 +334,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
             }}
           >
             <div
-              aria-label="DVD logo"
+              aria-label="Bouncing DVD logo screensaver"
               role="img"
               style={{
                 width: "100%",

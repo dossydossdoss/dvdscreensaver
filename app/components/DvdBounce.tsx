@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "./ThemeProvider";
 
@@ -521,6 +522,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
 
         {/* Info cards — same container as canvas/controls */}
         <div className="flex flex-col gap-4 text-sm pb-4">
+
           {copy.infoCards.map((card) => (
             <div key={card.title} className={`${cardBase} p-4`}>
               <h2 className={`text-lg font-semibold ${headingColor}`}>{card.title}</h2>
@@ -549,6 +551,19 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
               </div>
             </div>
           ))}
+
+          <div className="flex justify-center py-2">
+            <Link
+              href="/contact"
+              className={`rounded-xl px-6 py-3 text-sm font-medium transition ${
+                isLight
+                  ? "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                  : "bg-neutral-800 text-neutral-200 hover:bg-neutral-700"
+              }`}
+            >
+              Feedback &amp; Contact
+            </Link>
+          </div>
         </div>
       </main>
     </div>

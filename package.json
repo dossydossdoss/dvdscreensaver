@@ -1,0 +1,29 @@
+{
+  "name": "dvdscreensaver",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "TURBOPACK=0 next dev",
+    "build": "TURBOPACK=0 next build",
+    "start": "TURBOPACK=0 next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "^16.0.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

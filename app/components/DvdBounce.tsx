@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "./ThemeProvider";
 
@@ -552,20 +551,16 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
             </div>
           ))}
 
-          <div className="flex justify-center py-2">
-            <Link
-              href="/contact"
-              className={`rounded-xl px-6 py-3 text-sm font-medium transition ${
-                isLight
-                  ? "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                  : "bg-neutral-800 text-neutral-200 hover:bg-neutral-700"
-              }`}
-            >
-              Feedback &amp; Contact
-            </Link>
-          </div>
         </div>
       </main>
+
+      <footer className={`border-t px-4 py-6 text-center text-xs ${isLight ? "border-slate-200 text-slate-500" : "border-neutral-800 text-neutral-500"}`}>
+        <p>Questions or feedback? Email us at{" "}
+          <a href="mailto:hello@dvdscreensaver.app" className={`underline underline-offset-2 transition ${isLight ? "hover:text-slate-800" : "hover:text-neutral-300"}`}>
+            hello@dvdscreensaver.app
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

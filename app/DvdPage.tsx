@@ -9,9 +9,9 @@ const DvdBounce = dynamic(
 );
 
 const copy: DvdCopy = {
-  h1: "Bouncing DVD Logo Screensaver Simulator",
+  h1: "DVD Screensaver – Bouncing Logo Simulator",
   subtitle:
-    "Free online bouncing DVD logo screensaver simulator. Watch the DVD video screensaver bounce off edges, change colour on every hit, and chase the classic corner moment. Adjust speed and size. Runs directly in your browser.",
+    "Free DVD screensaver online. The classic bouncing DVD logo screensaver simulator — watch the DVD logo bounce off every edge, change colour on each hit, and chase that iconic corner moment. Adjust speed and size. Runs directly in your browser.",
   labels: { logoSize: "Logo size", speed: "Speed", logo: "Logo style", color: "Color" },
   shortcutHint: {
     enterKeys: "F / Space",
@@ -23,13 +23,12 @@ const copy: DvdCopy = {
     {
       title: "What the DVD Screensaver Does",
       bullets: [
-        "Classic bouncing logo screensaver — the DVD logo bounces off every edge",
-        "Free online DVD screensaver simulator, no download or account required",
+        "Classic DVD screensaver — the bouncing DVD logo simulator, free in your browser",
+        "Bouncing screensaver with smooth edge-bounce and colour change on every hit",
         "Choose from 3 different DVD logo styles using the logo picker",
-        "Lets you change movement speed (slow → fast)",
-        "Lets you change the logo size (small → large)",
-        "Watch the bouncing screensaver hit the corner for that iconic moment",
-        "Works on any desktop, laptop, TV, or projector",
+        "Adjust movement speed (slow → fast) and logo size (small → large)",
+        "Watch the bouncing DVD logo screensaver hit the corner for that iconic moment",
+        "Works on any desktop, laptop, TV, or projector — no download required",
         "Perfect for ambience, burn-in prevention, and display testing",
       ],
     },
@@ -59,7 +58,7 @@ const copy: DvdCopy = {
       faqEntries: [
         {
           q: "What is the DVD screensaver?",
-          a: "The DVD screensaver displays the classic bouncing DVD logo, the same animation found on DVD players and early Windows Media Player. The logo moves around the screen and changes color each time it bounces off an edge.",
+          a: "The DVD screensaver is the classic bouncing DVD logo animation found on DVD players, DVD video players, and early Windows Media Player. The logo moves around the screen and changes colour each time it bounces off an edge. This site is a free online DVD screensaver simulator — no download needed.",
         },
         {
           q: "Can the DVD screensaver hit the corner?",
@@ -70,8 +69,8 @@ const copy: DvdCopy = {
           a: "Yes. Constant motion prevents any single image from being static long enough to cause burn-in, making it useful for OLED and AMOLED displays.",
         },
         {
-          q: "Is the DVD screensaver free to use?",
-          a: "Yes, completely free. No download or account required. Works in any modern browser on desktop, laptop, TV, or projector.",
+          q: "Is this DVD screensaver website free to use?",
+          a: "Yes, completely free. No download or account required. Works in any modern browser on desktop, laptop, TV, or projector. Whether you call it a DVD screensaver, DVD player screen saver, or DVD logo screensaver — it's all here, free.",
         },
         {
           q: "Can I adjust the speed and logo size?",

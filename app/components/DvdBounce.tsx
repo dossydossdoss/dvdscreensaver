@@ -518,10 +518,9 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
             </div>
           </div>
         </div>
-      </main>
 
-      <section className="px-4 pb-8">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 text-sm">
+        {/* Info cards — same container as canvas/controls */}
+        <div className="flex flex-col gap-4 text-sm pb-4">
           {copy.infoCards.map((card) => (
             <div key={card.title} className={`${cardBase} p-4`}>
               <h2 className={`text-lg font-semibold ${headingColor}`}>{card.title}</h2>
@@ -551,7 +550,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
             </div>
           ))}
         </div>
-      </section>
+      </main>
     </div>
   );
 }

@@ -277,17 +277,13 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
 
   return (
     <div className={`flex min-h-screen flex-col ${pageBg}`}>
-      <header
-        className={`border-b py-3 text-sm ${
-          isLight ? "border-slate-200 bg-white/80 shadow-sm" : "border-neutral-800"
-        }`}
-      >
-        <div className="mx-auto flex w-full lg:max-w-6xl flex-col gap-3 px-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">{copy.h1}</h1>
+      <header className="py-8 sm:py-12">
+        <div className="mx-auto w-full lg:max-w-6xl px-4">
+          <div className="mb-3 flex justify-end">
             <ThemeToggle />
           </div>
-          <p className={`text-xs ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">{copy.h1}</h1>
+          <p className={`mt-4 max-w-2xl text-sm sm:text-base ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
             {copy.subtitle}
           </p>
         </div>
@@ -562,10 +558,9 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
         </div>
       </main>
 
-      <nav aria-label="More about the DVD Screensaver" className={`border-t px-4 py-5 ${isLight ? "border-slate-200" : "border-neutral-800"}`}>
+      <nav aria-label="More about the DVD Screensaver" className="px-4 py-5">
         <div className="mx-auto w-full lg:max-w-6xl text-center">
-          <p className={`mb-3 text-xs font-medium ${isLight ? "text-slate-400" : "text-neutral-500"}`}>More about the DVD Screensaver</p>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+<div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
             {[
               { href: "/simulator/", label: "DVD Screensaver Simulator" },
               { href: "/will-it-hit-the-corner/", label: "Will It Hit the Corner?" },
@@ -586,7 +581,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
         </div>
       </nav>
 
-      <footer className={`border-t px-4 py-6 text-center text-xs ${isLight ? "border-slate-200 text-slate-500" : "border-neutral-800 text-neutral-500"}`}>
+      <footer className={`px-4 py-6 text-center text-xs ${isLight ? "text-slate-500" : "text-neutral-500"}`}>
         <p>
           Questions or feedback?{" "}
           <Link href="/contact/" className={`underline underline-offset-2 transition ${isLight ? "hover:text-slate-800" : "hover:text-neutral-300"}`}>

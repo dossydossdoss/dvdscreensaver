@@ -14,7 +14,7 @@ const copy: DvdCopy = {
     "Free DVD screensaver online. The classic bouncing DVD logo screensaver simulator — watch the DVD logo bounce off every edge, change colour on each hit, and chase that iconic corner moment. Adjust speed and size. Runs directly in your browser.",
   labels: { logoSize: "Logo size", speed: "Speed", logo: "Logo style", color: "Color" },
   shortcutHint: {
-    enterKeys: "F / Space",
+    enterKeys: "F / Space / Click",
     escapeKey: "Esc",
     enter: "enter fullscreen",
     exit: "exit fullscreen",

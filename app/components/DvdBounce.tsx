@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "./ThemeProvider";
 
@@ -559,11 +560,36 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
         </div>
       </main>
 
+      <nav aria-label="More about the DVD Screensaver" className={`border-t px-4 py-5 ${isLight ? "border-slate-200" : "border-neutral-800"}`}>
+        <div className="mx-auto w-full lg:max-w-6xl text-center">
+          <p className={`mb-3 text-xs font-medium ${isLight ? "text-slate-400" : "text-neutral-500"}`}>More about the DVD Screensaver</p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            {[
+              { href: "/simulator/", label: "DVD Screensaver Simulator" },
+              { href: "/will-it-hit-the-corner/", label: "Will It Hit the Corner?" },
+              { href: "/history/", label: "History of the DVD Screensaver" },
+              { href: "/dvd-logo-screensaver/", label: "DVD Logo Screensaver" },
+              { href: "/about/", label: "About" },
+              { href: "/contact/", label: "Contact" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`underline underline-offset-2 transition ${isLight ? "text-slate-600 hover:text-slate-900" : "text-neutral-400 hover:text-neutral-200"}`}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </nav>
+
       <footer className={`border-t px-4 py-6 text-center text-xs ${isLight ? "border-slate-200 text-slate-500" : "border-neutral-800 text-neutral-500"}`}>
-        <p>Questions or feedback? Email us at{" "}
-          <a href="mailto:hello@dvdscreensaver.app" className={`underline underline-offset-2 transition ${isLight ? "hover:text-slate-800" : "hover:text-neutral-300"}`}>
-            hello@dvdscreensaver.app
-          </a>
+        <p>
+          Questions or feedback?{" "}
+          <Link href="/contact/" className={`underline underline-offset-2 transition ${isLight ? "hover:text-slate-800" : "hover:text-neutral-300"}`}>
+            Contact us
+          </Link>
         </p>
       </footer>
     </div>

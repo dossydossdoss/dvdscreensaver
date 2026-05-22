@@ -296,7 +296,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
       <main className="mx-auto flex w-full flex-1 flex-col gap-4 p-4 lg:max-w-6xl">
         {/* Canvas */}
         <div
-          className={`relative w-full cursor-pointer overflow-hidden ${
+          className={`group relative w-full cursor-pointer overflow-hidden ${
             isFullscreen ? "rounded-none border-0" : `${cardBase} shadow-inner`
           } min-h-[320px] sm:min-h-[480px]`}
           ref={containerRef}
@@ -312,6 +312,20 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
               <span><span className="font-semibold">Shift + Scroll</span> – change speed</span>
             </div>
           </div>
+
+          {/* Hover fullscreen hint — slides up from bottom */}
+          {!isFullscreen && (
+            <div className="pointer-events-none absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 pb-5">
+              <div className="flex items-center gap-2 rounded-xl bg-black/60 px-5 py-2.5 text-sm text-white backdrop-blur-sm whitespace-nowrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polyline points="15 3 21 3 21 9" /><polyline points="9 21 3 21 3 15" />
+                  <line x1="21" y1="3" x2="14" y2="10" /><line x1="3" y1="21" x2="10" y2="14" />
+                </svg>
+                Click for fullscreen
+              </div>
+            </div>
+          )}
+
 
           <div
             ref={logoRef}

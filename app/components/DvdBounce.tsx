@@ -355,18 +355,6 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
           </div>
         </div>
 
-        {/* Keyboard shortcuts */}
-        <div className={`${cardBase} px-4 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-xs ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
-          <span>
-            <span className={`font-semibold ${isLight ? "text-slate-900" : "text-neutral-200"}`}>{enterKeysLabel}</span>
-            {" "}– {copy.shortcutHint?.enter ?? "enter fullscreen"}
-          </span>
-          <span>
-            <span className={`font-semibold ${isLight ? "text-slate-900" : "text-neutral-200"}`}>{escapeKeyLabel}</span>
-            {" "}– {copy.shortcutHint?.exit ?? "exit fullscreen"}
-          </span>
-        </div>
-
         {/* Controls — 3 columns: logo | color | size+speed */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 

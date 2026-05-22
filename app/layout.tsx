@@ -67,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');if(t==='light')return;document.documentElement.classList.add('dark');document.documentElement.setAttribute('data-theme','dark');})();` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');var d=document.documentElement;if(t==='light'){d.setAttribute('data-theme','light');}else{d.classList.add('dark');d.setAttribute('data-theme','dark');}})();` }} />
       </head>
       <body className="antialiased">
         <ThemeProvider>{children}</ThemeProvider>

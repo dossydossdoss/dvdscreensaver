@@ -222,7 +222,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
       setIsFullscreen(entered);
       if (entered) {
         setShowScrollHint(true);
-        setTimeout(() => setShowScrollHint(false), 2500);
+        setTimeout(() => setShowScrollHint(false), 3500);
       }
     };
     document.addEventListener("fullscreenchange", onFullscreenChange);

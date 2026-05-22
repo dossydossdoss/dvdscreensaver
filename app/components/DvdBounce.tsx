@@ -277,7 +277,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
 
   return (
     <div className={`flex min-h-screen flex-col ${pageBg}`}>
-      <header className="py-8 sm:py-12">
+      <header className="pt-8 pb-4 sm:pt-12 sm:pb-6">
         <div className="mx-auto w-full lg:max-w-6xl px-4">
           <div className="mb-3 flex justify-end">
             <ThemeToggle />

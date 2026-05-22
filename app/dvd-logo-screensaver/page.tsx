@@ -33,21 +33,21 @@ const jsonLd = {
 
 export default function DvdLogoScreensaverPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-neutral-950 text-neutral-50">
+    <div className="flex min-h-screen flex-col bg-white text-slate-900 dark:bg-neutral-950 dark:text-neutral-50">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHeader />
 
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
-        <h1 className="text-4xl font-semibold tracking-tight">DVD Logo Screensaver</h1>
-        <p className="mt-4 text-lg text-neutral-300">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-neutral-50">DVD Logo Screensaver</h1>
+        <p className="mt-4 text-lg text-slate-700 dark:text-neutral-300">
           The DVD logo screensaver is the classic animation found on DVD players and DVD video
           software: a small DVD logo drifting across a black screen, bouncing off edges, and
           changing colour on every hit.
         </p>
 
-        <section className="mt-10 rounded-xl border border-orange-500/40 bg-orange-500/10 p-6 text-center">
-          <p className="text-lg font-semibold text-neutral-50">Try the DVD Logo Screensaver</p>
-          <p className="mt-1 text-sm text-neutral-400">3 logo styles, custom colours, adjustable speed. Free, no download.</p>
+        <section className="mt-10 rounded-xl border border-orange-400 bg-orange-50 dark:border-orange-500/40 dark:bg-orange-500/10 p-6 text-center">
+          <p className="text-lg font-semibold text-slate-900 dark:text-neutral-50">Try the DVD Logo Screensaver</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-neutral-400">3 logo styles, custom colours, adjustable speed. Free, no download.</p>
           <Link
             href="/"
             className="mt-4 inline-block rounded-lg bg-orange-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-orange-400 transition"
@@ -56,9 +56,9 @@ export default function DvdLogoScreensaverPage() {
           </Link>
         </section>
 
-        <article className="mt-10 space-y-8 text-neutral-300">
+        <article className="mt-10 space-y-8 text-slate-700 dark:text-neutral-300">
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">The DVD Logo</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">The DVD Logo</h2>
             <div className="mt-3 space-y-3">
               <p>
                 The DVD logo is the official trademark of the DVD format, administered by the
@@ -75,22 +75,22 @@ export default function DvdLogoScreensaverPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">Three DVD Logo Styles</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">Three DVD Logo Styles</h2>
             <div className="mt-3 space-y-3">
               <p>This simulator includes three distinct DVD logo styles:</p>
               <ul className="list-disc pl-5 space-y-3">
                 <li>
-                  <strong className="text-neutral-200">Classic DVD Logo</strong> — the original bold
+                  <strong className="text-slate-800 dark:text-neutral-200">Classic DVD Logo</strong> — the original bold
                   disc logo, most commonly seen on standalone DVD players. The most recognisable and
                   the version that became iconic through internet culture.
                 </li>
                 <li>
-                  <strong className="text-neutral-200">DVD Video Logo</strong> — the rectangular badge
+                  <strong className="text-slate-800 dark:text-neutral-200">DVD Video Logo</strong> — the rectangular badge
                   version used on DVD Video releases and packaging. A slightly different shape with
                   "VIDEO" text below the DVD mark.
                 </li>
                 <li>
-                  <strong className="text-neutral-200">DVD Video Logo (Alt)</strong> — an alternate
+                  <strong className="text-slate-800 dark:text-neutral-200">DVD Video Logo (Alt)</strong> — an alternate
                   treatment of the DVD Video badge, with a different internal layout. Seen on some
                   regional and alternative DVD releases.
                 </li>
@@ -103,7 +103,7 @@ export default function DvdLogoScreensaverPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">How the Colour Works</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">How the Colour Works</h2>
             <div className="mt-3 space-y-3">
               <p>
                 The DVD logo changes colour each time it bounces off a wall — exactly as the
@@ -113,39 +113,39 @@ export default function DvdLogoScreensaverPage() {
               </p>
               <p>This simulator also offers additional colour modes not found on the original:</p>
               <ul className="list-disc pl-5 space-y-2">
-                <li><strong className="text-neutral-200">Solid colour</strong> — pick any colour from the presets or use the custom colour picker. The logo stays that colour throughout.</li>
-                <li><strong className="text-neutral-200">Continuous hue cycle</strong> — the logo smoothly shifts through the full colour spectrum in real time, regardless of bounces.</li>
-                <li><strong className="text-neutral-200">Rotating (default)</strong> — colour changes on each wall hit, cycling through the classic palette.</li>
+                <li><strong className="text-slate-800 dark:text-neutral-200">Solid colour</strong> — pick any colour from the presets or use the custom colour picker. The logo stays that colour throughout.</li>
+                <li><strong className="text-slate-800 dark:text-neutral-200">Continuous hue cycle</strong> — the logo smoothly shifts through the full colour spectrum in real time, regardless of bounces.</li>
+                <li><strong className="text-slate-800 dark:text-neutral-200">Rotating (default)</strong> — colour changes on each wall hit, cycling through the classic palette.</li>
               </ul>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">DVD Logo Screensaver Use Cases</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">DVD Logo Screensaver Use Cases</h2>
             <div className="mt-3 space-y-3">
               <p>The DVD logo screensaver has practical and aesthetic uses beyond nostalgia:</p>
               <ul className="list-disc pl-5 space-y-2">
-                <li><strong className="text-neutral-200">Burn-in prevention</strong> — OLED and AMOLED screens are vulnerable to static burn-in. The moving logo prevents this, just as it did on CRT televisions in the original DVD era.</li>
-                <li><strong className="text-neutral-200">Display testing</strong> — the bouncing logo is useful for checking panel uniformity, motion blur, and pixel response across the full screen area.</li>
-                <li><strong className="text-neutral-200">Background ambience</strong> — a dynamic, colourful background for events, streams, and offices. Nostalgic and visually engaging.</li>
-                <li><strong className="text-neutral-200">Retro decoration</strong> — recreate the classic DVD era aesthetic on any screen.</li>
+                <li><strong className="text-slate-800 dark:text-neutral-200">Burn-in prevention</strong> — OLED and AMOLED screens are vulnerable to static burn-in. The moving logo prevents this, just as it did on CRT televisions in the original DVD era.</li>
+                <li><strong className="text-slate-800 dark:text-neutral-200">Display testing</strong> — the bouncing logo is useful for checking panel uniformity, motion blur, and pixel response across the full screen area.</li>
+                <li><strong className="text-slate-800 dark:text-neutral-200">Background ambience</strong> — a dynamic, colourful background for events, streams, and offices. Nostalgic and visually engaging.</li>
+                <li><strong className="text-slate-800 dark:text-neutral-200">Retro decoration</strong> — recreate the classic DVD era aesthetic on any screen.</li>
               </ul>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">Frequently Asked Questions</h2>
-            <dl className="mt-3 space-y-5">
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">Frequently Asked Questions</h2>
+            <dl className="mt-3 space-y-5 text-slate-700 dark:text-neutral-300">
               <div>
-                <dt className="font-semibold text-neutral-200">Is the DVD logo screensaver free?</dt>
+                <dt className="font-semibold text-slate-800 dark:text-neutral-200">Is the DVD logo screensaver free?</dt>
                 <dd className="mt-1">Yes. No download, no account, no cost. Works in any modern browser on desktop, laptop, TV, or projector.</dd>
               </div>
               <div>
-                <dt className="font-semibold text-neutral-200">Can I change the DVD logo colour?</dt>
+                <dt className="font-semibold text-slate-800 dark:text-neutral-200">Can I change the DVD logo colour?</dt>
                 <dd className="mt-1">Yes. Choose from 10 preset colours, use the custom colour picker for any colour, or enable the continuous hue cycle mode.</dd>
               </div>
               <div>
-                <dt className="font-semibold text-neutral-200">Which DVD logo style is the most accurate to the original?</dt>
+                <dt className="font-semibold text-slate-800 dark:text-neutral-200">Which DVD logo style is the most accurate to the original?</dt>
                 <dd className="mt-1">The Classic DVD Logo is the closest to what appeared on most standalone DVD players. The DVD Video Logo appeared more commonly on computer software players.</dd>
               </div>
             </dl>
@@ -155,21 +155,21 @@ export default function DvdLogoScreensaverPage() {
         <nav className="mt-10 border-t border-neutral-800 pt-8">
           <p className="text-sm font-medium text-neutral-400 mb-4">Related pages</p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/simulator/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/simulator/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               DVD Screensaver Simulator →
             </Link>
-            <Link href="/will-it-hit-the-corner/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/will-it-hit-the-corner/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               Will It Hit the Corner? →
             </Link>
-            <Link href="/history/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/history/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               DVD Screensaver History →
             </Link>
           </div>
         </nav>
       </main>
 
-      <footer className="border-t border-neutral-800 px-4 py-6 text-center text-xs text-neutral-500">
-        <p>Questions or feedback? <a href="/contact/" className="underline hover:text-neutral-300 transition">Contact us</a></p>
+      <footer className="border-t border-slate-200 px-4 py-6 text-center text-xs text-slate-500 dark:border-neutral-800 dark:text-neutral-500">
+        <p>Questions or feedback? <a href="/contact/" className="underline hover:text-slate-700 dark:hover:text-neutral-300 transition">Contact us</a></p>
       </footer>
     </div>
   );

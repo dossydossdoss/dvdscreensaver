@@ -65,20 +65,20 @@ const jsonLd = [
 
 export default function CornerHitPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-neutral-950 text-neutral-50">
+    <div className="flex min-h-screen flex-col bg-white text-slate-900 dark:bg-neutral-950 dark:text-neutral-50">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHeader />
 
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
-        <h1 className="text-4xl font-semibold tracking-tight">Will the DVD Screensaver Hit the Corner?</h1>
-        <p className="mt-4 text-lg text-neutral-300">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-neutral-50">Will the DVD Screensaver Hit the Corner?</h1>
+        <p className="mt-4 text-lg text-slate-700 dark:text-neutral-300">
           Yes — given enough time and the right starting conditions, the bouncing DVD logo will hit
           the exact corner of the screen. Here is why it happens, and how to make it happen faster.
         </p>
 
-        <section className="mt-10 rounded-xl border border-orange-500/40 bg-orange-500/10 p-6 text-center">
-          <p className="text-lg font-semibold text-neutral-50">Watch the DVD Screensaver Hit the Corner</p>
-          <p className="mt-1 text-sm text-neutral-400">Crank up the speed. Free, no download.</p>
+        <section className="mt-10 rounded-xl border border-orange-400 bg-orange-50 dark:border-orange-500/40 dark:bg-orange-500/10 p-6 text-center">
+          <p className="text-lg font-semibold text-slate-900 dark:text-neutral-50">Watch the DVD Screensaver Hit the Corner</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-neutral-400">Crank up the speed. Free, no download.</p>
           <Link
             href="/"
             className="mt-4 inline-block rounded-lg bg-orange-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-orange-400 transition"
@@ -87,9 +87,9 @@ export default function CornerHitPage() {
           </Link>
         </section>
 
-        <article className="mt-10 space-y-8 text-neutral-300">
+        <article className="mt-10 space-y-8 text-slate-700 dark:text-neutral-300">
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">Why the Corner Hit Became Famous</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">Why the Corner Hit Became Famous</h2>
             <div className="mt-3 space-y-3">
               <p>
                 The DVD screensaver corner hit became an internet phenomenon, most famously through
@@ -107,7 +107,7 @@ export default function CornerHitPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">The Geometry Behind the Corner Hit</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">The Geometry Behind the Corner Hit</h2>
             <div className="mt-3 space-y-3">
               <p>
                 The DVD logo bounces at consistent angles. It moves diagonally — horizontally and
@@ -135,7 +135,7 @@ export default function CornerHitPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">How to Make the DVD Screensaver Hit the Corner Faster</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">How to Make the DVD Screensaver Hit the Corner Faster</h2>
             <div className="mt-3 space-y-3">
               <p>
                 The fastest way: increase the speed using the speed slider. At maximum speed, a
@@ -154,18 +154,18 @@ export default function CornerHitPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">Frequently Asked Questions</h2>
-            <dl className="mt-3 space-y-5">
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">Frequently Asked Questions</h2>
+            <dl className="mt-3 space-y-5 text-slate-700 dark:text-neutral-300">
               <div>
-                <dt className="font-semibold text-neutral-200">Does the DVD screensaver always hit the corner?</dt>
+                <dt className="font-semibold text-slate-800 dark:text-neutral-200">Does the DVD screensaver always hit the corner?</dt>
                 <dd className="mt-1">Yes — eventually. The mathematical guarantee comes from the rational ratio of screen dimensions. It may take a long time at slow speed, but it will happen.</dd>
               </div>
               <div>
-                <dt className="font-semibold text-neutral-200">What episode of The Office has the DVD screensaver?</dt>
+                <dt className="font-semibold text-slate-800 dark:text-neutral-200">What episode of The Office has the DVD screensaver?</dt>
                 <dd className="mt-1">Season 3, Episode 3 — "The Coup". Kevin watches the DVD screensaver and almost misses the corner hit. A genuinely iconic television moment.</dd>
               </div>
               <div>
-                <dt className="font-semibold text-neutral-200">Can I increase my chances of a corner hit?</dt>
+                <dt className="font-semibold text-slate-800 dark:text-neutral-200">Can I increase my chances of a corner hit?</dt>
                 <dd className="mt-1">Yes: increase speed, try a smaller logo size, or reload for a new starting angle. All of these affect the timing of when a corner hit occurs.</dd>
               </div>
             </dl>
@@ -175,21 +175,21 @@ export default function CornerHitPage() {
         <nav className="mt-10 border-t border-neutral-800 pt-8">
           <p className="text-sm font-medium text-neutral-400 mb-4">Related pages</p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/simulator/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/simulator/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               DVD Screensaver Simulator →
             </Link>
-            <Link href="/history/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/history/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               DVD Screensaver History →
             </Link>
-            <Link href="/dvd-logo-screensaver/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/dvd-logo-screensaver/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               DVD Logo Screensaver →
             </Link>
           </div>
         </nav>
       </main>
 
-      <footer className="border-t border-neutral-800 px-4 py-6 text-center text-xs text-neutral-500">
-        <p>Questions or feedback? <a href="/contact/" className="underline hover:text-neutral-300 transition">Contact us</a></p>
+      <footer className="border-t border-slate-200 px-4 py-6 text-center text-xs text-slate-500 dark:border-neutral-800 dark:text-neutral-500">
+        <p>Questions or feedback? <a href="/contact/" className="underline hover:text-slate-700 dark:hover:text-neutral-300 transition">Contact us</a></p>
       </footer>
     </div>
   );

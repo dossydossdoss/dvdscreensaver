@@ -36,27 +36,27 @@ const jsonLd = {
 
 export default function ContactPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-neutral-950 text-neutral-50">
+    <div className="flex min-h-screen flex-col bg-white text-slate-900 dark:bg-neutral-950 dark:text-neutral-50">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHeader />
 
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
-        <h1 className="text-4xl font-semibold tracking-tight">Contact</h1>
-        <p className="mt-4 text-lg text-neutral-300">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-neutral-50">Contact</h1>
+        <p className="mt-4 text-lg text-slate-700 dark:text-neutral-300">
           Questions, feedback, bug reports, or anything else — we'd love to hear from you.
         </p>
 
-        <section className="mt-10 rounded-xl border border-neutral-800 bg-neutral-900/60 p-8">
-          <h2 className="text-xl font-semibold text-neutral-50">Email</h2>
-          <p className="mt-2 text-neutral-400">For all enquiries:</p>
+        <section className="mt-10 rounded-xl border border-slate-200 bg-slate-50 dark:border-neutral-800 dark:bg-neutral-900/60 p-8">
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-neutral-50">Email</h2>
+          <p className="mt-2 text-slate-500 dark:text-neutral-400">For all enquiries:</p>
           <a
             href="mailto:hello@dvdscreensaver.app"
-            className="mt-3 inline-block text-lg font-medium text-neutral-100 underline underline-offset-4 hover:text-white transition"
+            className="mt-3 inline-block text-lg font-medium text-slate-900 underline dark:text-neutral-100 underline-offset-4 hover:text-white transition"
           >
             hello@dvdscreensaver.app
           </a>
 
-          <div className="mt-8 space-y-3 text-sm text-neutral-400">
+          <div className="mt-8 space-y-3 text-sm text-slate-500 dark:text-neutral-400">
             <p>We welcome:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Bug reports and technical issues</li>
@@ -67,17 +67,17 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <p className="mt-8 text-sm text-neutral-500">
+        <p className="mt-8 text-sm text-slate-500 dark:text-neutral-500">
           Want to know more about the site?{" "}
-          <Link href="/about/" className="underline underline-offset-2 text-neutral-400 hover:text-neutral-200 transition">
+          <Link href="/about/" className="underline underline-offset-2 text-slate-600 hover:text-slate-900 dark:text-neutral-400 dark:hover:text-neutral-200 transition">
             Read the About page
           </Link>
           .
         </p>
       </main>
 
-      <footer className="border-t border-neutral-800 px-4 py-6 text-center text-xs text-neutral-500">
-        <Link href="/" className="underline hover:text-neutral-300 transition">← Back to DVD Screensaver</Link>
+      <footer className="border-t border-slate-200 px-4 py-6 text-center text-xs text-slate-500 dark:border-neutral-800 dark:text-neutral-500">
+        <Link href="/" className="underline hover:text-slate-700 dark:hover:text-neutral-300 transition">← Back to DVD Screensaver</Link>
       </footer>
     </div>
   );

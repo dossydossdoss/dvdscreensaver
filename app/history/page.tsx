@@ -38,21 +38,21 @@ const jsonLd = {
 
 export default function HistoryPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-neutral-950 text-neutral-50">
+    <div className="flex min-h-screen flex-col bg-white text-slate-900 dark:bg-neutral-950 dark:text-neutral-50">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHeader />
 
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
-        <h1 className="text-4xl font-semibold tracking-tight">History of the DVD Screensaver</h1>
-        <p className="mt-4 text-lg text-neutral-300">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-neutral-50">History of the DVD Screensaver</h1>
+        <p className="mt-4 text-lg text-slate-700 dark:text-neutral-300">
           The DVD screensaver — a logo bouncing silently across a black screen — is one of the most
           recognised pieces of incidental software ever made. Here is where it came from, why it
           was built, and how it became a cultural icon.
         </p>
 
-        <article className="mt-10 space-y-8 text-neutral-300">
+        <article className="mt-10 space-y-8 text-slate-700 dark:text-neutral-300">
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">The DVD Player Era</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">The DVD Player Era</h2>
             <div className="mt-3 space-y-3">
               <p>
                 DVD players became mainstream consumer electronics in the late 1990s and early
@@ -76,7 +76,7 @@ export default function HistoryPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">Why the DVD Logo?</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">Why the DVD Logo?</h2>
             <div className="mt-3 space-y-3">
               <p>
                 The bouncing object was the DVD logo — the official trademark of the DVD format,
@@ -93,7 +93,7 @@ export default function HistoryPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">Why the Colour Changes</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">Why the Colour Changes</h2>
             <div className="mt-3 space-y-3">
               <p>
                 Each time the DVD logo bounced off a wall, it changed colour. This served both
@@ -115,7 +115,7 @@ export default function HistoryPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">From Hardware to Software</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">From Hardware to Software</h2>
             <div className="mt-3 space-y-3">
               <p>
                 As DVD playback moved to personal computers, software DVD players replicated the
@@ -137,7 +137,7 @@ export default function HistoryPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">The Cultural Moment: The Office</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">The Cultural Moment: The Office</h2>
             <div className="mt-3 space-y-3">
               <p>
                 The DVD screensaver became genuinely famous through The Office (US). In Season 3,
@@ -161,7 +161,7 @@ export default function HistoryPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-neutral-50">The DVD Screensaver Today</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-neutral-50">The DVD Screensaver Today</h2>
             <div className="mt-3 space-y-3">
               <p>
                 Physical DVD players have largely disappeared from homes, replaced by streaming
@@ -184,9 +184,9 @@ export default function HistoryPage() {
           </section>
         </article>
 
-        <section className="mt-10 rounded-xl border border-orange-500/40 bg-orange-500/10 p-6 text-center">
-          <p className="text-lg font-semibold text-neutral-50">Try the DVD Screensaver</p>
-          <p className="mt-1 text-sm text-neutral-400">Free, no download. Runs in any browser.</p>
+        <section className="mt-10 rounded-xl border border-orange-400 bg-orange-50 dark:border-orange-500/40 dark:bg-orange-500/10 p-6 text-center">
+          <p className="text-lg font-semibold text-slate-900 dark:text-neutral-50">Try the DVD Screensaver</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-neutral-400">Free, no download. Runs in any browser.</p>
           <Link
             href="/"
             className="mt-4 inline-block rounded-lg bg-orange-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-orange-400 transition"
@@ -198,21 +198,21 @@ export default function HistoryPage() {
         <nav className="mt-10 border-t border-neutral-800 pt-8">
           <p className="text-sm font-medium text-neutral-400 mb-4">Related pages</p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/simulator/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/simulator/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               DVD Screensaver Simulator →
             </Link>
-            <Link href="/will-it-hit-the-corner/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/will-it-hit-the-corner/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               Will It Hit the Corner? →
             </Link>
-            <Link href="/dvd-logo-screensaver/" className="rounded-lg border border-neutral-700 px-4 py-2 text-sm text-neutral-300 hover:border-neutral-500 hover:text-neutral-100 transition">
+            <Link href="/dvd-logo-screensaver/" className="rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-600 hover:border-slate-400 hover:text-slate-900 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 transition">
               DVD Logo Screensaver →
             </Link>
           </div>
         </nav>
       </main>
 
-      <footer className="border-t border-neutral-800 px-4 py-6 text-center text-xs text-neutral-500">
-        <p>Questions or feedback? <a href="/contact/" className="underline hover:text-neutral-300 transition">Contact us</a></p>
+      <footer className="border-t border-slate-200 px-4 py-6 text-center text-xs text-slate-500 dark:border-neutral-800 dark:text-neutral-500">
+        <p>Questions or feedback? <a href="/contact/" className="underline hover:text-slate-700 dark:hover:text-neutral-300 transition">Contact us</a></p>
       </footer>
     </div>
   );

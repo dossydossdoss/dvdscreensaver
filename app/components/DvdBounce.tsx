@@ -297,7 +297,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
           } min-h-[320px] sm:min-h-[480px]`}
           ref={containerRef}
           onClick={toggleFullscreen}
-          style={{ backgroundColor: "#000" }}
+          style={{ backgroundColor: "#000", cursor: isFullscreen ? "none" : undefined }}
         >
           <div
             className="pointer-events-none absolute inset-0 flex items-end justify-center pb-10 z-10 transition-opacity duration-700"

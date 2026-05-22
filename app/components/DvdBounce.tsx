@@ -283,7 +283,7 @@ export function DvdBounce({ copy }: { copy: DvdCopy }) {
             <ThemeToggle />
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">{copy.h1}</h1>
-          <p className={`mt-4 max-w-2xl text-sm sm:text-base ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
+          <p className={`mt-4 text-sm sm:text-base ${isLight ? "text-slate-500" : "text-neutral-400"}`}>
             {copy.subtitle}
           </p>
         </div>
